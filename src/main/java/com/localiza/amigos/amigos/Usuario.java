@@ -7,14 +7,26 @@ import java.util.ArrayList;
 public class Usuario {
 //
     @Id
+    String nickname;
     String nombre;
     String paterno;
     String materno;
     String email;
     ArrayList<Coordenada> coordenadas;
 
-
     public Usuario(){}
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "nickname='" + nickname + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", paterno='" + paterno + '\'' +
+                ", materno='" + materno + '\'' +
+                ", email='" + email + '\'' +
+                ", coordenadas=" + coordenadas +
+                '}';
+    }
 
     public String getNickname() {
         return nickname;
@@ -64,18 +76,5 @@ public class Usuario {
         this.coordenadas = coordenadas;
     }
 
-    String nickname;
-
-    @Override
-    public String toString() {
-        return "Usuario{" +
-                "nickname='" + nickname + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", paterno='" + paterno + '\'' +
-                ", materno='" + materno + '\'' +
-                ", email='" + email + '\'' +
-                ", coordenadas=" + coordenadas +
-                '}';
-    }
 
 }

@@ -25,6 +25,16 @@ public class ControladorUsuario {
         return repoUsuario.findById(id).get();
     }
 
+    @GetMapping("/usuario-borrar/{id}")
+    public Estatus borrarPorId(@PathVariable String id){
+
+        repoUsuario.deleteById(id);
+        Estatus e=new Estatus();
+        e.mensaje="Borrado";
+        e.success=true;
+        return e;
+    }
+
     @PostMapping("/usuario")
     public Estatus guardar(@RequestBody String json) throws Exception{
         ObjectMapper mapper = new ObjectMapper();
